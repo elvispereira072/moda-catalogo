@@ -10,7 +10,7 @@
 
     <div class="bg-white p-6 shadow-lg rounded-lg max-w-md w-full">
         <h2 class="text-lg font-bold text-gray-800">Purchase Summary 🛍️</h2>
-        <ul id="resumoCompra" class="text-sm text-gray-700 mt-3"></ul>
+        <ul id="PurchaseSummary" class="text-sm text-gray-700 mt-3"></ul>
 
         <button onclick="confirmarCompra()" class="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-600 w-full">
             Confirm order
@@ -20,7 +20,7 @@
     <script>
         function carregarCarrinho() {
             let produtos = JSON.parse(localStorage.getItem("carrinho")) || [];
-            let lista = document.getElementById("resumoCompra");
+            let lista = document.getElementById("PurchaseSummary");
 
             if (produtos.length === 0) {
                 lista.innerHTML = "<li class='text-red-500'>Carrinho vazio!</li>";
@@ -30,7 +30,7 @@
         }
 
         function confirmarCompra() {
-            alert(Purchase completed successfully! 🎉");
+            alert(Purchase completed successfully 🎉");
             localStorage.removeItem("carrinho");
             window.location.href = "index.html"; // Redireciona de volta para a loja
         }
