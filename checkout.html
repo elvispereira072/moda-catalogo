@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confira</title>
+    <title>Finalizar Compra</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 flex justify-center items-center h-screen">
 
     <div class="bg-white p-6 shadow-lg rounded-lg max-w-md w-full">
-        <h2 class="text-lg font-bold text-gray-800">Resumo da compra 🛍️</h2>
-        <ul id="Resumo da compra" class="text-sm text-gray-700 mt-3"></ul>
+        <h2 class="text-lg font-bold text-gray-800">Resumo da Compra 🛍️</h2>
+        <ul id="resumoCompra" class="text-sm text-gray-700 mt-3"></ul>
 
         <button onclick="confirmarCompra()" class="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-600 w-full">
-            Confirmar compra
+            Confirmar Pedido
         </button>
     </div>
 
     <script>
         function carregarCarrinho() {
             let produtos = JSON.parse(localStorage.getItem("carrinho")) || [];
-            let lista = document.getElementById("PurchaseSummary");
+            let lista = document.getElementById("resumoCompra");
 
             if (produtos.length === 0) {
                 lista.innerHTML = "<li class='text-red-500'>Carrinho vazio!</li>";
@@ -30,7 +30,7 @@
         }
 
         function confirmarCompra() {
-            alert(Purchase completed successfully 🎉");
+            alert("Compra finalizada com sucesso! 🎉");
             localStorage.removeItem("carrinho");
             window.location.href = "index.html"; // Redireciona de volta para a loja
         }
