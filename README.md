@@ -1,31 +1,22 @@
-Fashion & Decoration Catalog
-This is a Fashion & Decoration Catalog project created with HTML, CSS, JavaScript, and Tailwind CSS. The catalog allows users to view fashion and decoration products, add items to their cart, and complete the purchase. The project also includes features for adding products to favorites and redirecting to the checkout page.
+Catálogo de Moda e Decoração
+Este é um catálogo de produtos de moda e decoração, desenvolvido com HTML, CSS e JavaScript, utilizando a biblioteca Tailwind CSS para facilitar o design responsivo e moderno. O projeto permite que os usuários visualizem itens de moda, adicionem produtos ao carrinho e finalizem a compra por meio de um link para o WhatsApp.
 
-Features
-Product Display: Showcases a list of products with images, names, and descriptions.
+Funcionalidades
+Visualização de produtos: Exibe uma lista de produtos com imagem, nome e descrição.
 
-Shopping Cart: Adds items to the cart and allows users to proceed with the purchase.
+Carrinho de compras: Permite ao usuário adicionar produtos ao carrinho e visualizar os itens no carrinho.
 
-Favorites: Users can add or remove products from their favorites.
+Favoritos: Os produtos podem ser marcados como favoritos.
 
-Checkout: Displays a summary of the purchase and confirms the order completion.
+Finalização de compra: O usuário pode clicar no botão de "Finalizar Compra" e enviar os produtos selecionados para o WhatsApp.
 
-Technologies Used
-HTML: Basic page structure.
+Página de resumo da compra: Exibe um resumo dos itens no carrinho antes da finalização da compra.
 
-CSS: Custom styling using Tailwind CSS.
+Tecnologias Utilizadas
+HTML5: Estrutura básica do projeto.
 
-JavaScript: Interactive functionalities like adding to cart and favorites.
+CSS: Utilização do Tailwind CSS para o design responsivo e estilização dos componentes.
 
-LocalStorage: Stores cart items locally.
+JavaScript: Para a lógica de interação com o carrinho de compras, favoritos e finalização da compra.
 
-File Structure
-index.html: Main page with the product catalog.
-
-checkout.html: Checkout page displaying the order summary.
-
-assets/: Folder containing product images.
-
-favicon.ico: Website icon.
-
-This description makes the project clear and professional for showcasing your skills, focusing on the technologies used and the features it offers.
+Font Awesome: Para ícones, como o coração de favoritos
