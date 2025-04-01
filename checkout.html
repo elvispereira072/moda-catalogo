@@ -10,7 +10,9 @@
 
     <div class="bg-white p-6 shadow-lg rounded-lg max-w-md w-full">
         <h2 class="text-lg font-bold text-gray-800">Resumo da Compra 🛍️</h2>
-        <ul id="resumoCompra" class="text-sm text-gray-700 mt-3"></ul>
+        <ul id="resumoCompra" class="text-sm text-gray-700 mt-3">
+            <!-- Lista de produtos será carregada aqui -->
+        </ul>
 
         <button onclick="confirmarCompra()" class="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-600 w-full">
             Confirmar Pedido
@@ -18,24 +20,37 @@
     </div>
 
     <script>
+        // Carrega os itens do carrinho do localStorage e exibe-os na página
         function carregarCarrinho() {
             let produtos = JSON.parse(localStorage.getItem("carrinho")) || [];
             let lista = document.getElementById("resumoCompra");
 
+            // Verifica se o carrinho está vazio e exibe a mensagem apropriada
             if (produtos.length === 0) {
-                lista.innerHTML = "<li class='text-red-500'>Carrinho vazio!</li>";
+                lista.innerHTML = "<li class='text-red-500'>Carrinho vazio! Adicione itens antes de finalizar a compra.</li>";
             } else {
+                // Exibe a lista de produtos
                 lista.innerHTML = produtos.map(produto => `<li>✅ ${produto}</li>`).join('');
             }
         }
 
+        // Função para confirmar a compra e redirecionar para a página inicial
         function confirmarCompra() {
+            let produtos = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+            if (produtos.length === 0) {
+                alert("Não há produtos no carrinho para finalizar a compra.");
+                return;
+            }
+
             alert("Compra finalizada com sucesso! 🎉");
-            localStorage.removeItem("carrinho");
-            window.location.href = "index.html"; // Redireciona de volta para a loja
+            localStorage.removeItem("carrinho"); // Limpa o carrinho após a compra
+            window.location.href = "index.html"; // Redireciona de volta para a página principal
         }
 
+        // Carrega o carrinho quando a página for carregada
         carregarCarrinho();
     </script>
 </body>
 </html>
+
