@@ -119,8 +119,11 @@
             let whatsappLink = `https://wa.me/5513981430940?text=${mensagemCodificada}`;
             
             // Atualiza o link do botão para o WhatsApp
-            document.getElementById("whatsapp-btn").href = whatsappLink;
-            document.getElementById("whatsapp-btn").click();  // Simula o clique no botão para abrir o WhatsApp
+            let whatsappBtn = document.getElementById("whatsapp-btn");
+            whatsappBtn.href = whatsappLink;
+            
+            // Simula o clique no botão para abrir o WhatsApp
+            whatsappBtn.click();
         }
     </script>
 </body>
