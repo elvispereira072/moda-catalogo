@@ -18,40 +18,24 @@
     </div>
 
     <script>
-    function carregarCarrinho() {
-        let produtos = JSON.parse(localStorage.getItem("carrinho")) || [];
-        let lista = document.getElementById("resumoCompra");
+        function carregarCarrinho() {
+            let produtos = JSON.parse(localStorage.getItem("carrinho")) || [];
+            let lista = document.getElementById("resumoCompra");
 
-        if (produtos.length === 0) {
-            lista.innerHTML = "<li class='text-red-500'>Carrinho vazio!</li>";
-        } else {
-            lista.innerHTML = produtos.map(produto => `<li>✅ ${produto}</li>`).join('');
-        }
-    }
-
-    function confirmarCompra() {
-        let produtos = JSON.parse(localStorage.getItem("carrinho")) || [];
-        if (produtos.length === 0) {
-            alert("Seu carrinho está vazio!");
-            return;
+            if (produtos.length === 0) {
+                lista.innerHTML = "<li class='text-red-500'>Carrinho vazio!</li>";
+            } else {
+                lista.innerHTML = produtos.map(produto => `<li>✅ ${produto}</li>`).join('');
+            }
         }
 
-        // Formatar a mensagem para WhatsApp
-        let mensagem = `*Resumo da Compra*%0A%0A` + produtos.map(produto => `✅ ${produto}`).join('%0A%0A');
-        
-        // Criar a URL do WhatsApp
-        let whatsappUrl = `https://wa.me/5513981430940?text=${encodeURIComponent(mensagem)}`; // Número de telefone com o código do país (55 para Brasil)
+        function confirmarCompra() {
+            alert("Compra finalizada com sucesso! 🎉");
+            localStorage.removeItem("carrinho");
+            window.location.href = "index.html"; // Redireciona de volta para a loja
+        }
 
-        // Abrir o WhatsApp com a mensagem pré-preenchida
-        window.open(whatsappUrl, "_blank");
-
-        alert("Compra finalizada com sucesso! 🎉");
-        localStorage.removeItem("carrinho");
-        window.location.href = "index.html"; // Redireciona de volta para a loja
-    }
-
-    carregarCarrinho();
+        carregarCarrinho();
     </script>
 </body>
 </html>
-
